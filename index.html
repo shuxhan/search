@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>树寒搜索</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #iDiv {
+            margin: 100px auto;
+            max-width: 800px;
+        }
+
+        #sel,
+        #subm {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+            outline: none;
+        }
+
+        #sel {
+            background: #fff;
+            color: #555;
+            border-color: #ccc;
+        }
+
+        #inp {
+            display: block;
+            width: 94%;
+            padding: 6px 0px 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+
+        #inp:focus {
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+        }
+
+        #tab1 {
+            margin: 100px auto;
+            width: 60%;
+        }
+
+        @media (max-width: 670px){
+            #tab1 {
+                margin: 100px auto;
+                width: 95%;
+            }
+            td {
+                display: block;
+                text-align: center;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            #sel,
+            #subm{
+                width: 100%;
+            }
+            
+        }
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="iDiv">
+        <h3 class="title">树寒搜索</h3>
+        <form name="f" onsubmit="return s4()" method="get">
+            <table id="tab1" border="0" align="center">
+                <tr>
+                    <td align="right">
+                        <select name="sou" id="sel" style="height: 100%">
+                            <option value="baidu" selected="1">百度</option>
+                            <option value="google">Google</option>
+                            <option value="zhihu">知乎</option>
+                            <option value="sougou">搜狗</option>
+                            <option value="csdn">csdn</option>
+                            <option value="cnblogs">博客园</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="k" id="inp" autocomplete="off">
+                    </td>
+                    <td><input type="submit" id="subm" value="搜索" style="height: 100%">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script language="javascript">
+        function s4() {
+            var v = f.k.value;
+
+            if (f.sou.value == "baidu")
+                window.open("http://www.baidu.com/baidu?tn=592mm&word=" + v);
+            if (f.sou.value == "google")
+                window.open("http://www.google.com/search?hl=zh-CN&ie=GB2312&q=" + v);
+            if (f.sou.value == "sougou")
+                window.open("http://www.sogou.com/web?query=" + v);
+            if (f.sou.value == "zhihu")
+                window.open("http://www.zhihu.com/search?type=content&q=" + v);
+            if (f.sou.value == "csdn")
+                window.open("https://so.csdn.net/so/search/all?q=" + v);
+            if (f.sou.value == "cnblogs")
+                window.open("https://zzk.cnblogs.com/s?w=" + v)
+            return false
+        }
+    </script>
+</body>
+
+</html>
