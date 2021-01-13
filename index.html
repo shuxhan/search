@@ -46,7 +46,7 @@
             border-color: #2e6da4;
             outline: none;
         }
-
+ 
         #sel {
             background: #fff;
             color: #555;
@@ -153,13 +153,14 @@
                 </tr>
             </table>
         </form>
-        <div class="copyright">©2020-2021 search by <a target="_blank" href="https://shuxhan.com">shuxhan</a> v1.0</div>
+        <div class="copyright">©2020-2021 search by <a target="_blank" href="https://shuxhan.com">shuxhan</a> v1.1</div>
     </div>
 
     <script>
         function s4() {
             var v = f.k.value;
-
+            if (v == "")
+                return false;
             if (f.sou.value == "baidu")
                 window.open("https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=" + v);
             if (f.sou.value == "google")
@@ -180,4 +181,3 @@
 </body>
 
 </html>
-
